@@ -18,12 +18,18 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.16",
     "@tailwindcss/vite": "^4.1.16",
+    "@vueuse/core": "^14.0.0",
+    "@vueuse/motion": "^3.0.3",
     "framer-motion": "^12.23.24",
+    "lucide-vue-next": "^0.548.0",
     "pinia": "^3.0.3",
     "tailwindcss": "^4.1.16",
     "vue": "^3.5.22",
-    "vue-router": "^4.6.3"
+    "vue-countup-v3": "^1.4.2",
+    "vue-router": "^4.6.3",
+    "vue3-toastify": "^0.2.8"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1",
@@ -37,6 +43,7 @@
     "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.37.0",
     "eslint-plugin-playwright": "^2.2.2",
     "eslint-plugin-vue": "~10.5.0",
