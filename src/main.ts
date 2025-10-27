@@ -24,7 +24,17 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-app.use(Toast, { toastDefaults: { position: 'top-right', duration: 3000 } })
+app.use(Toast, {
+  toastDefaults: {
+    position: 'top-right',
+    duration: 3000,
+    theme: localStorage.getItem('theme') === 'dark' ? 'dark' : 'light',
+    className: 'custom-toast',
+    bodyClassName: 'custom-toast-body',
+    progressClassName: 'custom-progress-bar',
+    closeButtonClassName: 'custom-toast-close',
+  },
+})
 app.use(MotionPlugin)
 
 app.mount('#app')

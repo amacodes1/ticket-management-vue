@@ -18,7 +18,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #0B0B0B;
+    --color-background: #0b0b0b;
     --color-background-soft: ;
     --color-background-mute: ;
 
@@ -28,7 +28,6 @@
     --color-text: ;
   }
 }
-
 
 body {
   font-family: 'Quicksand', sans-serif;
@@ -42,7 +41,10 @@ body {
 
 /* Generic transition */
 * {
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Small animation used in your code */
@@ -73,4 +75,42 @@ body {
 }
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #6b7280;
+}
+
+/* Toast background and text */
+.custom-toast {
+  background-color: rgba(155, 138, 251, 0.2); /* Matches [#9B8AFB]/20 */
+  color: #9b8afb;
+  border-radius: 8px;
+}
+
+.custom-toast-body {
+  font-size: 14px;
+  color: #9b8afb;
+}
+
+/* Progress bar (duration line) */
+.Toastify__progress-bar {
+  background-color: #9b8afb !important;
+}
+
+.Toastify__progress-bar--success {
+  background-color: #9b8afb !important;
+}
+
+.Toastify__progress-bar--error {
+  background-color: #ef4444 !important;
+}
+
+.custom-progress-bar {
+  background-color: #9b8afb !important;
+}
+
+.custom-progress-bar::before {
+  border-radius: 0 !important;
+}
+
+/* Checkmark icon for success toasts */
+.Toastify__toast-icon svg {
+  fill: #9b8afb !important;
 }
