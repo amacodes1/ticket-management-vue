@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { toast } from "vue3-toastify";
 import { mockLogin } from "@/lib/auth";
+import { useAuthState } from "@/composables/useAuthState";
 
 defineOptions({
   name: "LoginPage"
@@ -13,6 +14,7 @@ const password = ref("");
 const err = ref<string | null>(null);
 const loading = ref(false);
 const router = useRouter();
+const { updateSession } = useAuthState();
 
 async function handleSubmit() {
   err.value = null;
@@ -23,6 +25,7 @@ async function handleSubmit() {
   loading.value = true;
   try {
     await mockLogin(email.value, password.value);
+    updateSession();
     toast.success("Login successful");
     router.push("/dashboard");
   } catch (e: unknown) {
@@ -35,7 +38,7 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <div class="text-[#111827] dark:text-white py-16 mb-20 md:mb-26">
+  <div class="text-[#111827] dark:text-white mb-20 md:mb-26">
     <div class="flex flex-col items-center justify-center min-h-screen p-4">
       <main class="w-full max-w-md mx-auto">
         <div class="text-center">

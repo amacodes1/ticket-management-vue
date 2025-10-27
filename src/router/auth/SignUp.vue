@@ -1,5 +1,5 @@
 <template>
-  <div class="text-[#111827] dark:text-white py-16 mb-20 md:mb-26">
+  <div class="text-[#111827] dark:text-white mb-20 md:mb-26">
     <div class="flex flex-col items-center justify-center min-h-screen p-4">
       <main class="w-full max-w-md mx-auto">
         <div class="text-center">
@@ -48,8 +48,10 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { toast } from "vue3-toastify";
 import { mockRegister } from "@/lib/auth";
+import { useAuthState } from "@/composables/useAuthState";
 
 const router = useRouter();
+const { updateSession } = useAuthState();
 const email = ref("");
 const name = ref("");
 const password = ref("");
@@ -65,6 +67,7 @@ async function handleSubmit() {
   loading.value = true;
   try {
     await mockRegister(email.value, password.value, name.value);
+    updateSession();
     toast.success("Account created");
     router.push("/dashboard");
   } catch (e: unknown) {

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import { getSession } from '@/lib/auth'
+import { useAuthState } from '@/composables/useAuthState'
 import WavyBg from '../../../public/images/tsxsvgs/WavyBg'
 // import Circle from "../../../public/images/circle.svg"
-const session = getSession()
+const { session } = useAuthState()
 </script>
 
 <template>
@@ -22,7 +22,7 @@ const session = getSession()
       v-motion
       :initial="{ opacity: 0, x: 100 }"
       :enter="{ opacity: 1, x: 0 }"
-      :transition="{ duration: 1000, ease: 'easeOut' }"
+      :transition="{ duration: 1500, ease: 'easeOut' }"
       class="hidden md:block absolute top-1/2 right-8 transform -translate-y-1/2 w-80 h-80 text-[#9B8AFB] z-0"
     >
       <img src="/src/assets/circle.svg" alt="" class="w-full h-full opacity-80" />
@@ -35,14 +35,14 @@ const session = getSession()
         v-motion
         :initial="{ opacity: 0, y: 40 }"
         :enter="{ opacity: 1, y: -10 }"
-        :transition="{ duration: 1000, ease: 'easeOut' }"
+        :transition="{ duration: 1200, ease: 'easeOut' }"
         class="flex flex-col gap-4 max-w-lg md:-mt-10"
       >
         <h1
           v-motion
           :initial="{ opacity: 0, x: -80 }"
           :enter="{ opacity: 1, x: 0 }"
-          :transition="{ duration: 800 }"
+          :transition="{ duration: 1000 }"
           class="text-3xl md:text-5xl font-bold tracking-tight text-left text-[#111827] dark:text-white"
         >
           TicketApp
@@ -51,7 +51,7 @@ const session = getSession()
           v-motion
           :initial="{ opacity: 0, x: -80 }"
           :enter="{ opacity: 1, x: 0 }"
-          :transition="{ duration: 1000, delay: 200 }"
+          :transition="{ duration: 1200, delay: 300 }"
           class="text-sm sm:text-base md:text-xl text-[#111827]/80 dark:text-white/80 text-left leading-relaxed"
         >
           Streamline your customer support experience.
@@ -65,7 +65,7 @@ const session = getSession()
           v-motion
           :initial="{ opacity: 0, y: 40 }"
           :enter="{ opacity: 1, y: 0 }"
-          :transition="{ duration: 1000, delay: 400 }"
+          :transition="{ duration: 1200, delay: 600 }"
           class="flex flex-col sm:flex-row gap-4 mt-3"
         >
           <RouterLink

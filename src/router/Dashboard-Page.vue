@@ -14,7 +14,7 @@ const sessionName = session?.name || session?.email || "User";
 
 
 <template>
-  <main class="flex-1 py-20 px-6 md:px-16 lg:px-20 mb-20 md:mb-36">
+  <main class="flex-1 py-2 mt-4 px-6 md:px-16 lg:px-20 mb-20 md:mb-36">
     <div class="mx-auto max-w-7xl py-12">
       <h1 class="text-xl font-bold tracking-tight text-[#111827] dark:text-white sm:text-2xl">Dashboard</h1>
       <h1 class="text-base font-base tracking-tight text-[#111827] dark:text-white sm:text-base">Welcome, {{ sessionName }}</h1>

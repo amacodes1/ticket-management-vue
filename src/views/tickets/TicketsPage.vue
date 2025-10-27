@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:bg-[#111827] text-[#111827] px-6 md:px-16 lg:px-20 dark:text-white font-display py-16 mt-14 mb-20 md:mb-26">
+  <div class="bg-white dark:bg-[#111827] text-[#111827] px-6 md:px-16 lg:px-20 dark:text-white font-display py-10 mt-4 mb-20 md:mb-26">
     <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
       <div class="mx-auto max-w-7xl w-full">
         <header class="flex items-center bg-white dark:bg-[#111827] justify-between sticky top-0 z-10">

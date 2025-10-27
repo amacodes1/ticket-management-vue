@@ -3,15 +3,15 @@ import { ref, computed } from "vue";
 import { RouterLink, useRouter } from "vue-router";
 import { toast } from "vue3-toastify";
 import { Menu, X, Ticket } from "lucide-vue-next";
-import { getSession, clearSession } from "@/lib/auth";
-
+import { clearSession } from "@/lib/auth";
+import { useAuthState } from "@/composables/useAuthState";
 
 const router = useRouter();
-const session = getSession();
+const { session, clearAuthSession } = useAuthState();
 const menuOpen = ref(false);
 
 const initials = computed(() => {
-  const name = session?.name || "";
+  const name = session.value?.name || "";
   const parts = name.trim().split(" ").filter(Boolean);
   if (parts.length === 0) return "";
   if (parts.length === 1) return (parts[0]?.[0] ?? "").toUpperCase();
@@ -20,6 +20,7 @@ const initials = computed(() => {
 
 function handleLogout() {
   clearSession();
+  clearAuthSession();
   toast.success("Logged out successfully");
   router.push("/");
 }
