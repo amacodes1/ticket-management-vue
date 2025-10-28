@@ -16,7 +16,7 @@
           <div class="mb-8 md:flex md:justify-center">
             <div class="relative">
               <Search class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input v-model="searchTerm" placeholder="Search tickets by title, description..." class="w-full sm:w-[600px] md:w-[800px] pl-12 pr-4 py-3 items-center justify-center rounded-full focus:outline-0 focus:ring-2 focus:ring-[#9B8AFB]/50 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 transition-shadow text-xs sm:text-base text-[#111827] dark:text-white" />
+              <input v-model="searchTerm" placeholder="Search tickets by title, description..." class="w-full sm:w-[600px] md:w-[600px] lg:w-[800px] pl-12 pr-4 py-3 items-center justify-center rounded-full focus:outline-0 focus:ring-2 focus:ring-[#9B8AFB]/50 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 transition-shadow text-xs sm:text-base text-[#111827] dark:text-white" />
             </div>
           </div>
 

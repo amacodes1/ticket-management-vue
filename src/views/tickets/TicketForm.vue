@@ -1,19 +1,19 @@
 <template>
   <div class="space-y-2">
     <div class="flex flex-col min-w-20 flex-1">
-      <label for="title" class="text-zinc-800 dark:text-zinc-200 text-base font-medium leading-normal pb-2">Title</label>
+      <label for="title" class="text-zinc-800 dark:text-zinc-200 text-base font-medium leading-normal pb-2">Title*</label>
       <input id="title" v-model="title" placeholder="e.g., Fix login button on mobile" class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-zinc-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-[#9B8AFB]/50 border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 h-14 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 p-4 text-base font-normal leading-normal" />
       <p class="text-red-500 text-sm mt-1 h-4">{{ errors.title || '' }}</p>
     </div>
 
     <div class="flex flex-col min-w-40 flex-1">
-      <label for="description" class="text-zinc-800 dark:text-zinc-200 text-base font-medium leading-normal pb-2">Description</label>
+      <label for="description" class="text-zinc-800 dark:text-zinc-200 text-base font-medium leading-normal pb-2">Description (optional but recommended)</label>
       <textarea id="description" v-model="description" placeholder="Provide a detailed description of the issue..." class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-zinc-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-[#9B8AFB]/50 border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 min-h-36 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 p-4 text-base font-normal leading-normal"></textarea>
       <p class="text-red-500 text-sm mt-1 h-4">{{ errors.description || '' }}</p>
     </div>
 
     <div class="flex flex-col min-w-40 flex-1 relative">
-      <label for="status" class="text-zinc-800 dark:text-zinc-200 text-base font-medium leading-normal pb-2">Status</label>
+      <label for="status" class="text-zinc-800 dark:text-zinc-200 text-base font-medium leading-normal pb-2">Status*</label>
       <div class="relative flex items-center">
         <span class="absolute left-4 w-2 h-2 rounded-full" :style="{ backgroundColor: statusColors[status] }"></span>
         <select id="status" v-model="status" class="flex w-full min-w-0 flex-1 cursor-pointer resize-none overflow-hidden rounded-lg text-zinc-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-[#9B8AFB]/50 border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 h-14 pl-10 pr-12 text-base font-normal leading-normal">

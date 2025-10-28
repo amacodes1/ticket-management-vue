@@ -95,11 +95,11 @@ function logoutAndClose() {
                 <div class="w-8 h-8 rounded-full bg-[#9B8AFB] text-white font-semibold flex items-center justify-center">{{ initials }}</div>
                 <span class="text-sm text-[#111827] dark:text-white">{{ session.name }}</span>
               </div>
-              <button @click="logoutAndClose" class="text-[#9B8AFB] font-semibold text-sm mt-2">Logout</button>
+              <button @click="logoutAndClose" class="text-[#9B8AFB] cursor-pointer font-semibold text-sm mt-2">Logout</button>
             </div>
           </template>
 
-          <RouterLink v-else to="/auth/login" @click="menuOpen = false" class="mt-4 px-3 py-2 bg-[#9B8AFB] text-white rounded text-center text-base hover:bg-[#9B8AFB]/90">Login</RouterLink>
+          <RouterLink v-else to="/auth/login" @click="menuOpen = false" class="mt-4 px-3 py-2 bg-[#9B8AFB] text-white cursor-pointer rounded text-center text-base hover:bg-[#9B8AFB]/90">Login</RouterLink>
         </div>
       </div>
     </div>
